@@ -7,6 +7,7 @@ import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
+import ProductSelector from "$store/islands/VariantSelector.tsx";
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
  * It takes the user to the pdp once the user clicks on a given sku. This is interesting to
@@ -56,7 +57,7 @@ function ProductCard({ product, preload }: Props) {
       id={`product-card-${productID}`}
       class="w-full group"
     >
-      <a href={url} aria-label="product link">
+      <a  aria-label="product link">
         <div class="relative w-full">
           <Image
             src={front.url!}
@@ -84,8 +85,13 @@ function ProductCard({ product, preload }: Props) {
                 backdropFilter: "blur(2px)",
               }}
             >
-              <Sizes {...product} />
+
+              {/* <Sizes {...product} /> */}
+              <ProductSelector
+                product={product}
+              />
               <Button as="a" href={product.url}>Visualizar Produto</Button>
+         
             </div>
           )}
         </div>

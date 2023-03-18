@@ -54,11 +54,19 @@ function FooterContainer(
   return <div class={`py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
 }
 
+export type PropsI ={
+  href: string
+  name: string
+}
 export interface Props {
   sections?: Section[];
+  meuData?: Array<{
+    href: string
+    name: string
+  }>
 }
 
-function Footer({ sections = [] }: Props) {
+function Footer({ sections = [], meuData }: Props) {
   return (
     <footer class="w-full bg-footer flex flex-col divide-y-1 divide-default">
       <div>
@@ -67,6 +75,9 @@ function Footer({ sections = [] }: Props) {
             <Newsletter />
           </FooterContainer>
 
+          <div>
+           {meuData?.map(el => el)}
+          </div>
           <FooterContainer>
             {/* Desktop view */}
             <ul class="hidden sm:flex flex-row gap-20">
