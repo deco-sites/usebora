@@ -684,11 +684,27 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "alerts": {
+            "title": "Alerts",
             "type": "array",
             "items": {
-              "type": "string",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Name",
+                },
+                "href": {
+                  "type": [
+                    "string",
+                    "null",
+                  ],
+                  "title": "Href",
+                },
+              },
+              "required": [
+                "name",
+              ],
             },
-            "title": "Alerts",
           },
           "searchbar": {
             "title": "Search Bar",

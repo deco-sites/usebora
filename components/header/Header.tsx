@@ -27,7 +27,7 @@ export interface NavItem {
 }
 
 export interface Props {
-  alerts: string[];
+  alerts: Array<{name: string, href?: string}>;
   /** @title Search Bar */
   searchbar?: SearchbarProps;
   /**

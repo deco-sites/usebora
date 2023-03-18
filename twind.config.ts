@@ -119,7 +119,7 @@ const options: Omit<Options, "selfURL"> = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1536px",
+      "2xl": "1536px"
     },
   },
   preflight: (preflight) => ({
@@ -146,6 +146,7 @@ const options: Omit<Options, "selfURL"> = {
       "&::backdrop": {
         background: "rgba(0, 0, 0, 0.5)",
       },
+
     },
     "scroll-snap-center": {
       "scroll-snap-align": "center",

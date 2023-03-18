@@ -6,11 +6,10 @@ export interface INavItem {
   label: string;
   href: string;
   children?: INavItem[];
-  image?: { src?: string; alt?: string };
 }
 
 function NavItem({ item }: { item: INavItem }) {
-  const { href, label, children, image } = item;
+  const { href, label, children} = item;
 
   return (
     <li class="group flex items-center">
@@ -29,16 +28,7 @@ function NavItem({ item }: { item: INavItem }) {
             class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen mt-[${headerHeight}]`}
             style={{ top: "0px", left: "0px" }}
           >
-            {image?.src && (
-              <Image
-                class="p-6"
-                src={image.src}
-                alt={image.alt}
-                width={300}
-                height={332}
-                loading="lazy"
-              />
-            )}
+            
             <ul class="flex items-start justify-center gap-6">
               {children.map((node) => (
                 <li class="p-6">
