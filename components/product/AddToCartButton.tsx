@@ -11,7 +11,7 @@ function AddToCartButton({ skuId, sellerId }: Props) {
     skuId,
     sellerId,
   });
-  
+
   return (
     <Button {...props} class="w-full">
       Adicionar à Sacola

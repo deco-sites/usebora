@@ -57,7 +57,7 @@ function ProductCard({ product, preload }: Props) {
       id={`product-card-${productID}`}
       class="w-full group"
     >
-      <a  aria-label="product link">
+      <a aria-label="product link">
         <div class="relative w-full">
           <Image
             src={front.url!}
@@ -85,13 +85,11 @@ function ProductCard({ product, preload }: Props) {
                 backdropFilter: "blur(2px)",
               }}
             >
-
               {/* <Sizes {...product} /> */}
               <ProductSelector
                 product={product}
               />
               <Button as="a" href={product.url}>Visualizar Produto</Button>
-         
             </div>
           )}
         </div>

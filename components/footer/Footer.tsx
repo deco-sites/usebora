@@ -54,16 +54,16 @@ function FooterContainer(
   return <div class={`py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
 }
 
-export type PropsI ={
-  href: string
-  name: string
-}
+export type PropsI = {
+  href: string;
+  name: string;
+};
 export interface Props {
   sections?: Section[];
   meuData?: Array<{
-    href: string
-    name: string
-  }>
+    href: string;
+    name: string;
+  }>;
 }
 
 function Footer({ sections = [], meuData }: Props) {
@@ -76,7 +76,7 @@ function Footer({ sections = [], meuData }: Props) {
           </FooterContainer>
 
           <div>
-           {meuData?.map(el => el)}
+            {meuData?.map((el) => el)}
           </div>
           <FooterContainer>
             {/* Desktop view */}
