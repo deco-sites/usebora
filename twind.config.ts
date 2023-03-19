@@ -38,7 +38,10 @@ const options: Omit<Options, "selfURL"> = {
         "header": "#FFFFFF",
         "badge": "#8C3D3D", // shopping cart tem isso tambem
         "footer": "#003232",
-        "interactive": "#161616",
+        "color-primary-green": "#5ab45a",
+        "color-primary-green-hover": "#6abb6a",
+        "interactive": "#000",
+        "gray-500": "#505050;",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
         "hover-inverse": "rgba(255, 255, 255, 0.4)",

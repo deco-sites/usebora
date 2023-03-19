@@ -30,12 +30,12 @@ function ProductShelf({
       id={id}
       class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 sm:px-5"
     >
-      <h2 class="text-center row-start-1 col-span-full">
+      <h2 class="row-start-1 col-span-full text-base font-bold">
         <Text variant="heading-2">{title}</Text>
       </h2>
 
       <Slider
-        class="gap-6 col-span-full row-start-2 row-end-5"
+        class="gap-6 col-span-full row-start-2 row-end-5 overflow-x-hidden"
         snap="snap-center sm:snap-start block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
       >
         {products?.map((product) => (
@@ -46,17 +46,37 @@ function ProductShelf({
       </Slider>
 
       <>
-        <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-          <div class="absolute right-1/2 bg-interactive-inverse rounded-full border-default border">
-            <Button variant="icon" data-slide="prev" aria-label="Previous item">
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+        <div class=" relative block z-10 col-start-1 row-start-3">
+          <div class="absolute md:right-12 rounded-none border-none bg-transparent">
+            <Button
+              variant="icon"
+              data-slide="prev"
+              aria-label="Previous item"
+              class="bg-transparent rounded-none border-none"
+            >
+              <Icon
+                size={24}
+                id="ChevronLeft2"
+                strokeWidth={3}
+                class="text-2xl"
+              />
             </Button>
           </div>
         </div>
-        <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-          <div class="absolute left-1/2 bg-interactive-inverse rounded-full border-default border">
-            <Button variant="icon" data-slide="next" aria-label="Next item">
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
+        <div class=" relative block z-10 col-start-3 row-start-3">
+          <div class="absolute md:left-12 rounded-none border-none bg-transparent">
+            <Button
+              variant="icon"
+              data-slide="next"
+              aria-label="Next item"
+              class="bg-transparent rounded-none border-none"
+            >
+              <Icon
+                size={24}
+                id="ChevronRight2"
+                strokeWidth={3}
+                class="text-2xl"
+              />
             </Button>
           </div>
         </div>

@@ -3,7 +3,9 @@ import type { JSX } from "preact";
 
 export type AvailableIcons =
   | "ChevronLeft"
+  | "ChevronLeft2"
   | "ChevronRight"
+  | "ChevronRight2"
   | "ChevronUp"
   | "ChevronDown"
   | "QuestionMarkCircle"
