@@ -9,8 +9,11 @@ import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import ProductSelector from "$store/islands/VariantSelector.tsx";
-import {IThumbnail, IProps} from '$store/components/product/Thumbnail.tsx'
+import { IProps, IThumbnail } from "$store/components/product/Thumbnail.tsx";
 import Thumbnail from "$store/islands/Thumbnail.tsx";
+import Quantity from "$store/islands/Quantity.tsx";
+import Shipping from "$store/islands/Shipping.tsx";
+
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
 }
@@ -42,7 +45,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
     gtin,
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
-  const imagem: IProps[] = images as IProps[]
+  const imagem: IProps[] = images as IProps[];
   return (
     <Container class="py-0 sm:py-10">
       <div class="md:hidden my-2 px-4  sm:px-0">
@@ -66,25 +69,30 @@ function Details({ page }: { page: ProductDetailsPage }) {
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
-              <Text tone="subdued" variant="caption">
-                Cod. {gtin}
-              </Text>
             </div>
             <h1>
-              <Text variant="heading-3">{name}</Text>
+              <Text variant="heading-3" class="text-2xl text-gray-700">
+                {name}
+              </Text>
             </h1>
           </div>
           {/* Prices */}
           <div class="mt-4">
             <div class="flex flex-row gap-2 items-center">
-              <Text
+              {
+                /* <Text
                 class="line-through"
                 tone="subdued"
                 variant="list-price"
               >
                 {formatPrice(listPrice, offers!.priceCurrency!)}
-              </Text>
-              <Text tone="price" variant="heading-3">
+              </Text> */
+              }
+              <Text
+                tone="price"
+                variant="heading-3"
+                class="text-color-primary-green text-3xl"
+              >
                 {formatPrice(price, offers!.priceCurrency!)}
               </Text>
             </div>
@@ -97,17 +105,16 @@ function Details({ page }: { page: ProductDetailsPage }) {
             <ProductSelector product={product} />
           </div>
           {/* Add to Cart and Favorites button */}
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+          <div class="mt-4 fixed bottom-0 left-0 right-0 z-50 bg-white p-2 md:p-0 md:bg-transparent md:static sm:mt-10 flex gap-2">
             {seller && (
-              <AddToCartButton
-                skuId={productID}
-                sellerId={seller}
-              />
+              <>
+                <Quantity />
+                <AddToCartButton
+                  skuId={productID}
+                  sellerId={seller}
+                />
+              </>
             )}
-            <Button variant="secondary">
-              <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
-              Favoritar
-            </Button>
           </div>
           {/* Description card */}
           <div class="mt-4 sm:mt-6">
@@ -119,6 +126,9 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 </details>
               )}
             </Text>
+          </div>
+          <div>
+            <Shipping />
           </div>
         </div>
       </div>

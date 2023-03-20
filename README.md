@@ -105,7 +105,7 @@ Shopify, Oracle). To connect to a platform:
 Open the
 [ecommerce's global config](https://deco.cx/admin/{your-site-id}/workbench?section=deco-sites%2Fstd%2Fsections%2FconfigVTEX.global.tsx)
 and set your credentials. Then, open `/components/minicart/Cart.tsx` and
-`/routes/api/[...catchall].tsx` and replace `bravtexfashionstore` to your
+`/routes/api/[...catchall].tsx` and replace `usebora` to your
 account name.
 
 After this, your should be using the products provenient from your ecommerce
