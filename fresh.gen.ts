@@ -700,6 +700,13 @@ const manifest: DecoManifest = {
                   ],
                   "title": "Href",
                 },
+                "target": {
+                  "type": [
+                    "string",
+                    "null",
+                  ],
+                  "title": "Target",
+                },
               },
               "required": [
                 "name",
