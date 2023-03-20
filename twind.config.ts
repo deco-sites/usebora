@@ -115,8 +115,8 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     fontFamily: {
-      sans: ["Albert Sans", "sans-serif"],
-      serif: ["inherit", "serif"],
+      sans: ["Karla", "sans-serif"],
+      serif: ["Karla", "serif"],
     },
     screens: {
       sm: "640px",

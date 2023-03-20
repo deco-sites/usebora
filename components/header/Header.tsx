@@ -27,7 +27,7 @@ export interface NavItem {
 }
 
 export interface Props {
-  alerts: string[];
+  alerts: Array<{ name: string; href?: string; target?: string }>;
   /** @title Search Bar */
   searchbar?: SearchbarProps;
   /**
@@ -65,7 +65,7 @@ function Header(
 ) {
   const searchbar = { ..._searchbar, products, suggestions, configVTEX };
   return (
-    <header class={`h-[${headerHeight}]`}>
+    <header>
       <div class="bg-default fixed w-full z-50">
         <Alert alerts={alerts} />
         <Navbar items={navItems} searchbar={searchbar} />
