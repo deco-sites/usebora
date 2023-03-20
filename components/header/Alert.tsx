@@ -3,22 +3,21 @@ import Text from "$store/components/ui/Text.tsx";
 import { useId } from "preact/hooks";
 
 export interface Props {
-   /**
+  /**
    * @name titulo
    * @href link
-   * 
    */
-  alerts: Array<{name: string, href?: string, target?: string}>;
-
+  alerts: Array<{ name: string; href?: string; target?: string }>;
 }
 
-
 function Alert({ alerts = [] }: Props) {
-
   const id = useId();
 
   return (
-    <div id={id} class="bg-ring-offset-white gap-6 scrollbar-none hidden md:block border-b border-gray-300">
+    <div
+      id={id}
+      class="bg-ring-offset-white gap-6 scrollbar-none hidden md:block border-b border-gray-300"
+    >
       <div class="bg-ring-offset-white max-w-[1220px] mx-auto">
         <div class="flex  ">
           {alerts.map((alert) => (

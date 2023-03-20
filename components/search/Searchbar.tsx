@@ -114,7 +114,6 @@ function Searchbar({
           action={action}
           class="flex-grow flex gap-3 px-3 border border-default "
         >
-         
           <input
             ref={searchInputRef}
             id="search-input"
@@ -152,15 +151,20 @@ function Searchbar({
             htmlFor="searchbar"
             tabIndex={-1}
           >
-            {/* <Icon
+            {
+              /* <Icon
               class="text-subdued"
               id="MagnifyingGlass"
               width={20}
               height={20}
               strokeWidth={0.01}
-            /> */}
+            /> */
+            }
 
-            <img src="https://usebora.vteximg.com.br/arquivos/magnifying-glassnes.png" alt="lupa"/>
+            <img
+              src="https://usebora.vteximg.com.br/arquivos/magnifying-glassnes.png"
+              alt="lupa"
+            />
           </Button>
         </form>
         {variant === "desktop" && <CloseButton />}

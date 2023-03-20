@@ -7,11 +7,14 @@ export interface INavItem {
 }
 
 function NavItem({ item }: { item: INavItem }) {
-  const { href, label, children} = item;
+  const { href, label, children } = item;
 
   return (
     <li class="group flex items-center">
-      <a href={href} class="px-4 py-2 group-hover:bg-black group-hover:text-white font-bold">
+      <a
+        href={href}
+        class="px-4 py-2 group-hover:bg-black group-hover:text-white font-bold"
+      >
         <Text
           class="font-bold group-hover:text-white"
           variant="menu"
@@ -26,7 +29,6 @@ function NavItem({ item }: { item: INavItem }) {
             class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen mt-[156px]`}
             style={{ top: "0px", left: "0px" }}
           >
-            
             <ul class="flex items-start justify-center gap-6">
               {children.map((node) => (
                 <li class="p-6">
